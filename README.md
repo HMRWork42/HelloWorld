@@ -15,4 +15,6 @@ Host HMRWork42-github
   IdentityFile ~/.ssh/HMRWork42-rsa
 ```
 
+This allow clones with `git clone git@HMRWork42-github:HMRWork42/HelloWorld`, but not pushes. Pushes requires the `git config` line, but editing the `url` line in `.git/config`.
+
 `Settings` -> `Emails` -> `Keep my email addresses private` and `Block command line pushes that expose my email`
