@@ -28,7 +28,13 @@ PS C:\Users\...>
 
 `msinfo32` -> `System Information` -> `System Summary`
 
+```
 Hyper-V - VM Monitor Mode Extensions	Yes
 Hyper-V - Second Level Address Translation Extensions	Yes
 Hyper-V - Virtualisation Enabled in Firmware	No
 Hyper-V - Data Execution Protection	Yes
+```
+
+Multiple reboots, to get this:
+
+`ESC` BIOS settings, Advanced, switch on `VT-x` and `VT-d`.
