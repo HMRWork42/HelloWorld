@@ -1,0 +1,47 @@
+$ cat /proc/sys/fs/binfmt_misc/WSLInterop
+enabled
+interpreter /init
+flags: PF
+offset 0
+magic 4d5a
+---
+::::::::::::::
+/etc/wsl.conf
+::::::::::::::
+# Refer to https://learn.microsoft.com/en-us/windows/wsl/wsl-config#wslconf
+# for the full set of configuration options.
+[boot]
+systemd=true
+
+[user]
+default = "HMRWork42"
+::::::::::::::
+/etc/wsl-distribution.conf
+::::::::::::::
+# The /etc/wsl-distribution.conf configuration file.
+#
+# This is not intended to be edited by users; it is how WSL discovers
+# distribution defaults.
+#
+# Available configuration options are documented at
+# https://learn.microsoft.com/en-us/windows/wsl/build-custom-distro
+
+[oobe]
+# Command run the first time the user opens an interactive shell.
+# If the command returns non-zero, it is considered unsuccessful and the
+# user won't be able to open a shell.
+command = /usr/libexec/wsl/oobe.sh
+# Default UID for user the distribution starts with.
+defaultUid = 1000
+# Default name the distribution is registered under.
+# This is used when the user double-clicks to install, or uses
+# wsl --install --from-file ./Fedora.wsl
+defaultName = FedoraLinux-42
+
+[shortcut]
+enabled = true
+icon = /usr/share/pixmaps/fedora-logo.ico
+---
+$ rpm -qf /init
+file /init is not owned by any package
+---
