@@ -45,3 +45,8 @@ icon = /usr/share/pixmaps/fedora-logo.ico
 $ rpm -qf /init
 file /init is not owned by any package
 ---
+The setting can be set with
+
+$ sudo su -
+# echo ":WSLInterop:M::MZ::/init:" > /proc/sys/fs/binfmt_misc/register
+---
